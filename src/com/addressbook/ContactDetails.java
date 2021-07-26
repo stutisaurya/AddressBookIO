@@ -1,14 +1,32 @@
 package com.addressbook;
 
-class ContactDetails extends AddressBook {
+import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvBindByPosition;
 
+public class ContactDetails extends AddressBook {
+	@CsvBindByName(column = "firstName", required = true)
+	@CsvBindByPosition(position = 0)
 	private String firstName;
+	@CsvBindByName(column = "lastName", required = true)
+	@CsvBindByPosition(position = 1)
 	private String lastName;
+	@CsvBindByName(column = "address", required = true)
+	@CsvBindByPosition(position = 2)
 	private String address;
+	@CsvBindByName(column = "city", required = true)
+	@CsvBindByPosition(position = 3)
 	private String city;
+	@CsvBindByName(column = "state", required = true)
+	@CsvBindByPosition(position = 4)
 	private String state;
+	@CsvBindByName(column = "zipCode", required = true)
+	@CsvBindByPosition(position = 5)
 	private String zipCode;
+	@CsvBindByName(column = "phoneNumber", required = true)
+	@CsvBindByPosition(position = 6)
 	private String phoneNumber;
+	@CsvBindByName(column = "email", required = true)
+	@CsvBindByPosition(position = 7)
 	private String email;
 
 	// Constructor
@@ -83,5 +101,4 @@ class ContactDetails extends AddressBook {
 				+ "\nState: " + state + "\nZip Code: " + zipCode + "\nPhone Number: " + phoneNumber + "\nEmail: "
 				+ email);
 	}
-
 }
